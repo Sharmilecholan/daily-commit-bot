@@ -15,14 +15,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Configure Git (23f3001888@ds.study.iitm.ac.in)
+      - name: Configure Git
         run: |
           git config --global user.name "GitHub Action"
-          git config --global user.email "23f3001688@ds.study.iitm.ac.in"
+          git config --global user.email "23f3001688@ds.study.iitm.ac.in"  # Use your exact student email
 
       - name: Make a Change
         run: |
-          echo "Last run: $(date)" > last_run.txt  # Always modify the file
+          echo "Last run: $(date)" >> last_run.txt  # Append to last_run.txt
+          echo " " >> last_run.txt  # Add an extra blank line to force change
 
       - name: Commit and Push Changes
         run: |
